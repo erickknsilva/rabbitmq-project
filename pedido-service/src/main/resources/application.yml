@@ -1,0 +1,22 @@
+server:
+  port: 9002
+  shutdow: graceful
+
+spring:
+  application:
+    name: pedido-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+    connection-timeout: 5s
+    queue:
+      - name: consumer.produto-service
+      - name: dispatcher.notificacao-service
+    exchange:
+      - name: produto-service
+      - name: notificacao-service
+    routingKey:
+      - name: produto_service_routing_key
+      - name: notificacao_service_routing_key

@@ -1,0 +1,30 @@
+server:
+  port: 9003
+  shutdow: graceful
+
+spring:
+  application:
+    name: notificacao-service
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: erickdecker23@gmail.com
+    password: hnaqfnpimerribou
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+    connection-timeout: 5s
+    queue:
+      name: dispatcher.notificacao-service
+    exchange:
+      name: notificacao-service
+    routingKey:
+      name: notificacao_service_routing_key

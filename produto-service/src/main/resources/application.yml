@@ -1,0 +1,18 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: produto-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: password
+    connection-timeout: 5s
+    queue:
+      name: consumer.produto-service
+    exchange:
+      name: produto-service
+    routingKey:
+      name: produto_service_routing_key
